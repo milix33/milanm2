@@ -1,0 +1,329 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #05060a;
+  color: #f9fafb;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-root {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #05060a;
+}
+
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slider-section {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1rem;
+  background: radial-gradient(circle at top left, #1f2933 0, #05060a 55%);
+  overflow: hidden;
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 960px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-brand {
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 0.75rem;
+}
+
+.hero-tagline {
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.hero-headline {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 600;
+  color: #f9fafb;
+  margin-bottom: 2rem;
+}
+
+.hero-logo-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  color: #e5e7eb;
+}
+
+.hero-logo-symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(249, 250, 251, 0.16);
+  background: radial-gradient(circle at 30% 0, rgba(248, 250, 252, 0.2), transparent),
+    radial-gradient(circle at 80% 120%, rgba(56, 189, 248, 0.4), transparent);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.hero-logo-text {
+  font-size: 1.05rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-cta-primary,
+.hero-cta-secondary {
+  min-width: 160px;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hero-cta-primary {
+  background: linear-gradient(135deg, #22c55e, #22d3ee);
+  color: #020617;
+  box-shadow: 0 18px 45px rgba(45, 212, 191, 0.35);
+}
+
+.hero-cta-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 24px 55px rgba(45, 212, 191, 0.48);
+}
+
+.hero-cta-secondary {
+  background-color: transparent;
+  color: #e5e7eb;
+  border-color: rgba(148, 163, 184, 0.55);
+}
+
+.hero-cta-secondary:hover {
+  background-color: rgba(15, 23, 42, 0.9);
+  border-color: rgba(148, 163, 184, 0.8);
+}
+
+.hero-background-fireworks {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.23;
+  pointer-events: none;
+}
+
+.hero-firework-layer {
+  position: absolute;
+  width: 320%;
+  height: 320%;
+  top: -110%;
+  left: -110%;
+  background-image: radial-gradient(circle at 20% 30%, rgba(248, 250, 252, 0.55), transparent 45%),
+    radial-gradient(circle at 70% 10%, rgba(52, 211, 153, 0.6), transparent 46%),
+    radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.6), transparent 42%),
+    radial-gradient(circle at 15% 80%, rgba(244, 114, 182, 0.52), transparent 43%);
+  mix-blend-mode: screen;
+  filter: blur(1.25px);
+  animation: heroFireworksDrift 40s linear infinite alternate;
+}
+
+.hero-firework-layer--slow {
+  animation-duration: 55s;
+  opacity: 0.65;
+}
+
+@keyframes heroFireworksDrift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, -3%, 0) scale(1.03);
+  }
+  100% {
+    transform: translate3d(-3%, 5%, 0) scale(1.02);
+  }
+}
+
+.footer-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1rem;
+  background: radial-gradient(circle at bottom right, #111827 0, #020617 55%);
+}
+
+.footer-inner {
+  max-width: 1000px;
+  width: 100%;
+  color: #e5e7eb;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.footer-description {
+  font-size: 0.98rem;
+  color: #d1d5db;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem;
+}
+
+.footer-heading {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #9ca3af;
+  margin-bottom: 0.75rem;
+}
+
+.footer-links,
+.footer-services {
+  list-style: none;
+}
+
+.footer-links li,
+.footer-services li {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  opacity: 0.92;
+  cursor: default;
+}
+
+.footer-links li + li,
+.footer-services li + li {
+  margin-top: 0.35rem;
+}
+
+.footer-contact {
+  font-size: 0.95rem;
+}
+
+.footer-contact a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  margin-top: 1.4rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.dots-nav {
+  position: fixed;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 30;
+}
+
+.dots-nav-button {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease,
+    width 0.2s ease;
+}
+
+.dots-nav-button--active {
+  background-color: #e5e7eb;
+  border-color: #f9fafb;
+  width: 14px;
+  transform: translateX(-1px);
+}
+
+@media (max-width: 768px) {
+  .hero-inner {
+    text-align: left;
+  }
+
+  .hero-cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    width: 100%;
+  }
+
+  .footer-grid {
+    gap: 1.5rem;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .dots-nav {
+    right: 0.9rem;
+  }
+}
+
