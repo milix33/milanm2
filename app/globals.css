@@ -48,8 +48,12 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-inline: 1rem;
-  background: radial-gradient(circle at top left, #1f2933 0, #05060a 55%);
+  padding-inline: 1.25rem;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(55, 65, 81, 0.85), transparent 55%),
+    radial-gradient(circle at 80% 120%, rgba(34, 197, 94, 0.4), transparent 65%),
+    radial-gradient(circle at 120% -10%, rgba(56, 189, 248, 0.22), transparent 60%),
+    #020617;
   overflow: hidden;
 }
 
@@ -59,6 +63,38 @@ body::-webkit-scrollbar {
   width: 100%;
   text-align: center;
   z-index: 2;
+}
+
+.hero-panel {
+  position: relative;
+  padding: 2.5rem 2rem 2.25rem;
+  border-radius: 32px;
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7))
+      border-box,
+    linear-gradient(
+        135deg,
+        rgba(148, 163, 184, 0.18),
+        rgba(148, 163, 184, 0.02),
+        rgba(34, 197, 94, 0.4)
+      )
+      border-box;
+  border: 1px solid transparent;
+  box-shadow:
+    0 26px 80px rgba(15, 23, 42, 0.95),
+    0 0 0 1px rgba(148, 163, 184, 0.15),
+    0 0 120px rgba(34, 197, 94, 0.16);
+  backdrop-filter: blur(18px);
+}
+
+.hero-logo-image-wrapper {
+  margin: 1.25rem auto 1.75rem;
+}
+
+.hero-logo-image {
+  max-width: 240px;
+  height: auto;
+  opacity: 0.98;
+  filter: drop-shadow(0 18px 45px rgba(15, 23, 42, 0.9));
 }
 
 .hero-brand {
@@ -158,7 +194,7 @@ body::-webkit-scrollbar {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  opacity: 0.23;
+  opacity: 0.3;
   pointer-events: none;
 }
 
@@ -173,7 +209,7 @@ body::-webkit-scrollbar {
     radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.6), transparent 42%),
     radial-gradient(circle at 15% 80%, rgba(244, 114, 182, 0.52), transparent 43%);
   mix-blend-mode: screen;
-  filter: blur(1.25px);
+  filter: blur(1.25px) saturate(1.1);
   animation: heroFireworksDrift 40s linear infinite alternate;
 }
 
@@ -198,19 +234,30 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-inline: 1rem;
-  background: radial-gradient(circle at bottom right, #111827 0, #020617 55%);
+  padding-inline: 1.25rem;
+  background:
+    radial-gradient(circle at 0% 110%, rgba(15, 23, 42, 0.95), #020617 60%),
+    radial-gradient(circle at 100% 0%, rgba(30, 64, 175, 0.45), transparent 60%),
+    #020617;
 }
 
 .footer-inner {
   max-width: 1000px;
   width: 100%;
   color: #e5e7eb;
+  padding: 2.25rem 2rem 2rem;
+  border-radius: 28px;
+  background: radial-gradient(circle at top center, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.8));
+  box-shadow:
+    0 -24px 60px rgba(15, 23, 42, 0.95),
+    0 0 0 1px rgba(31, 41, 55, 0.8);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  backdrop-filter: blur(16px);
 }
 
 .footer-grid {
   display: grid;
-  gap: 1.75rem;
+  gap: 1.9rem;
 }
 
 .footer-description {

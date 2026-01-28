@@ -10,34 +10,36 @@ export default function HeroSection() {
       </div>
 
       <div className="hero-inner">
-        <div className="hero-logo-mark">
-          <span className="hero-logo-symbol">
-            m
-            <sup>2</sup>
-          </span>
-          <span className="hero-logo-text">M² Architecture</span>
-        </div>
+        <div className="hero-panel">
+          <div className="hero-logo-mark">
+            <span className="hero-logo-symbol">
+              m
+              <sup>2</sup>
+            </span>
+            <span className="hero-logo-text">M² Architecture</span>
+          </div>
 
-        <div style={{ marginBottom: "1.5rem" }}>
-          <Image
-            src={logoFile}
-            alt="M² Architecture logo"
-            style={{ maxWidth: "220px", height: "auto", opacity: 0.95 }}
-            priority
-          />
-        </div>
+          <div className="hero-logo-image-wrapper">
+            <Image
+              src={logoFile}
+              alt="M² Architecture logo"
+              className="hero-logo-image"
+              priority
+            />
+          </div>
 
-        <p className="hero-tagline">Projektovanje · Nadzor · Konsulting</p>
+          <p className="hero-tagline">Projektovanje · Nadzor · Konsulting</p>
 
-        <h1 className="hero-headline">We design spaces that inspire.</h1>
+          <h1 className="hero-headline">We design spaces that inspire.</h1>
 
-        <div className="hero-cta-row">
-          <button className="hero-cta-primary" type="button">
-            Pogledajte projekte
-          </button>
-          <button className="hero-cta-secondary" type="button">
-            Zatraži ponudu
-          </button>
+          <div className="hero-cta-row">
+            <button className="hero-cta-primary" type="button">
+              Pogledajte projekte
+            </button>
+            <button className="hero-cta-secondary" type="button">
+              Zatraži ponudu
+            </button>
+          </div>
         </div>
       </div>
     </section>
