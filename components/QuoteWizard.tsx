@@ -1,9 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { FaChevronRight, FaChevronLeft, FaCheck, FaHome, FaBuilding, FaBriefcase, FaCouch, FaTools, FaCube, FaSpinner } from 'react-icons/fa'
-import { ProjectType, wizardConfigs, WizardStep } from '@/lib/quote-wizard'
+import { ProjectType, wizardConfigs, WizardStep, WizardField } from '@/lib/quote-wizard'
 
 interface QuoteWizardProps {
   locale?: string
@@ -27,7 +27,7 @@ export default function QuoteWizard({ locale = 'sr', onClose }: QuoteWizardProps
   const [formData, setFormData] = useState<Record<string, any>>({})
   const [errors, setErrors] = useState<Record<string, string>>({})
 
-  const steps = selectedType ? wizardConfigs[selectedType] : []
+  const steps: WizardStep[] = selectedType ? wizardConfigs[selectedType] : []
   const totalSteps = steps.length
   const currentStepData = steps[currentStep]
 
@@ -37,7 +37,7 @@ export default function QuoteWizard({ locale = 'sr', onClose }: QuoteWizardProps
     
     if (!currentStepData) return false
 
-    currentStepData.fields.forEach((field) => {
+    currentStepData.fields.forEach((field: WizardField) => {
       const value = formData[field.id]
       
       if (field.required) {
@@ -293,7 +293,7 @@ export default function QuoteWizard({ locale = 'sr', onClose }: QuoteWizardProps
 
       {/* Form Fields */}
       <div className="space-y-6 mb-8">
-        {currentStepData?.fields.map((field) => (
+        {currentStepData?.fields.map((field: WizardField) => (
           <div key={field.id} className="space-y-2">
             <label className="block text-sm font-semibold text-gray-700">
               {field.label}
